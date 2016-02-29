@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Assignment 1</title>
+<link rel="stylesheet" href="assets/css/owfont-regular.min.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="assets/css/style.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="assets/css/loading-bar.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+    <div ng-app="weatherApp" ng-controller="homeCtrl">
+    	<div ng-show="weather">
+        	<div id="weather">
+        		<h2><i class="owf owf-{{weather.weather[0].id}}"></i> {{weather.main.temp}}°C</h2>
+                <ul>
+                	<li class="strong">{{weather.name}}, {{weather.sys.country}}</li>
+                    <li class="strong">{{weather.weather[0].main}}</li>
+                    <li>Wind: Speed {{weather.wind.speed}}, Deg {{weather.wind.deg}}</li>
+                    <li>Pressure: {{weather.main.pressure}}</li><li>Humidity: {{weather.main.humidity}}</li>
+                </ul>
+                <button class="btn-search" ng-click="showPopup()">Would you like to search again?</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="assets/js/lib/jquery.min.js"></script>
+<script type="text/javascript" src="assets/js/lib/angular.min.js"></script>
+<script type="text/javascript" src="assets/js/lib/loading-bar.js"></script>
+<script type="text/javascript" src="assets/js/app.js"></script>
+<script type="text/javascript" src="assets/js/controllers.js"></script>
+<script type="text/javascript" src="assets/js/services.js"></script>
+</html>
